@@ -5,8 +5,8 @@ local common = import 'common.libsonnet';
   httpListenAddress: ':7980',
   grpcServers: [{
     listenAddresses: [':8980'],
-//    authenticationPolicy: { deny: "REX says no " },
-    authenticationPolicy: { allow : {} },
+    authenticationPolicy: { okta: "REX says no , invalid okta" },
+//    authenticationPolicy: { allow : {} },
   }],
   schedulers: {
     'remote-execution': {
