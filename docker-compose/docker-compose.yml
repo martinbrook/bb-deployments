@@ -1,7 +1,7 @@
 version: '3'
 services:
   frontend:
-    image: buildbarn/bb-storage:20200520T103928Z-32c5ba0
+    image: bazel/cmd/bb_storage:bb_storage_container
     command:
     - /config/frontend.jsonnet
     ports:
@@ -11,7 +11,7 @@ services:
     - ./config:/config
 
   storage-0:
-    image: buildbarn/bb-storage:20200520T103928Z-32c5ba0
+    image: bazel/cmd/bb_storage:bb_storage_container
     command:
     - /config/storage.jsonnet
     expose:
@@ -24,7 +24,7 @@ services:
     - ./storage-cas-0:/storage-cas
 
   storage-1:
-    image: buildbarn/bb-storage:20200520T103928Z-32c5ba0
+    image: bazel/cmd/bb_storage:bb_storage_container
     command:
     - /config/storage.jsonnet
     expose:
